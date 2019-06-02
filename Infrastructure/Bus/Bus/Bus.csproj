@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>SuitSupply.Infrastructure.Bus</AssemblyName>
+    <RootNamespace>SuitSupply.Infrastructure.Bus</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommonServiceLocator" Version="2.0.4" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\validator\Contract\Contract.csproj" />
+    <ProjectReference Include="..\..\validator\Validator\Validator.csproj" />
+    <ProjectReference Include="..\Bus.Contracts\Bus.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

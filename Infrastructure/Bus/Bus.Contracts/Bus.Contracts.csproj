@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>SuitSupply.Infrastructure.Bus.Contracts</AssemblyName>
+    <RootNamespace>SuitSupply.Infrastructure.Bus.Contracts</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\validator\Contract\Contract.csproj" />
+  </ItemGroup>
+
+</Project>
