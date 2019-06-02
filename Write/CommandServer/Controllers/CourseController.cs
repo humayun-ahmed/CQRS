@@ -25,7 +25,7 @@
 
 		// GET api/values
 		[HttpGet]
-		[Route("api/course2")]
+		[Route("api/course")]
 		public IQueryable<Participant> Get()
 		{
 			return this.Repository.GetItems<Participant>();

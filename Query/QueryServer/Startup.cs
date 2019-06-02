@@ -58,13 +58,7 @@
 			RegisterDependencies(services);
 
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
-			/*
-			Mapper.Initialize(cfg => {
-				cfg.CreateMap<CreateProductCommand, Product>();
-				cfg.CreateMap<UpdateProductCommand, Product>();
-			});
-			*/
+			
 			AddVersioningAndDoc(services);
 		}
 

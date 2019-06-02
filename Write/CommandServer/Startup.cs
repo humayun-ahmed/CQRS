@@ -33,6 +33,7 @@
 	using Microsoft.Extensions.DependencyInjection;
 
 	using OnlineCourse.Repository.Domain;
+	using OnlineCourse.Repository.Entity;
 
 	using Swashbuckle.AspNetCore.Swagger;
 
@@ -155,6 +156,8 @@
 
 			services.AddScoped<IRepository, Repository>();
 			services.AddScoped<IReadOnlyRepository, Repository>();
+			services.AddScoped<ICourse, Course>();
+			
 
 			var contextBuilder = new DbContextOptionsBuilder();
 			contextBuilder.UseSqlServer(this.Configuration.GetSection("dbConnectionString").Value);

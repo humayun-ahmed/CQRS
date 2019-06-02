@@ -16,10 +16,12 @@
 		{
 		}
 
+		public DbSet<Course> Courses { get; set; }
 		public DbSet<ParticipantsAge> ParticipantsAges { get; set; }
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
+			modelBuilder.ApplyConfiguration(new CourseConfiguration());
 			modelBuilder.ApplyConfiguration(new ParticipantsAgeConfiguration());
 			base.OnModelCreating(modelBuilder);
 		}

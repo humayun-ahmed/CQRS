@@ -6,4 +6,8 @@
     <RootNamespace>Domain.Events</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\InfrastructureBus\Bus.Contracts\Bus.Contracts.csproj" />
+  </ItemGroup>
+
 </Project>

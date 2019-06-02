@@ -6,4 +6,9 @@
     <RootNamespace>OnlineCourse.Repository.Entity</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\InfrastructureBus\Bus.Contracts\Bus.Contracts.csproj" />
+    <ProjectReference Include="..\Events\Events.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -67,6 +67,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceBusHost", "Infrastru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceBusHost.RabbitMq", "InfrastructureBus\ServiceBusHost.RabbitMq\ServiceBusHost.RabbitMq.csproj", "{F84275D5-7DBE-44FD-B3A5-7AC6AA0F9A25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadModel.EventSubscriber", "Query\ReadModel.EventSubscriber\ReadModel.EventSubscriber.csproj", "{E3309747-5E23-4C15-B649-1EA8685E3C49}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -165,6 +167,10 @@ Global
 		{F84275D5-7DBE-44FD-B3A5-7AC6AA0F9A25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F84275D5-7DBE-44FD-B3A5-7AC6AA0F9A25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F84275D5-7DBE-44FD-B3A5-7AC6AA0F9A25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3309747-5E23-4C15-B649-1EA8685E3C49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3309747-5E23-4C15-B649-1EA8685E3C49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3309747-5E23-4C15-B649-1EA8685E3C49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3309747-5E23-4C15-B649-1EA8685E3C49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -198,6 +204,7 @@ Global
 		{950F7685-4C43-44D5-8018-16FF5DFE38C5} = {CF40312F-7EB7-4B17-AF56-0BE373352385}
 		{11C402A8-EAEB-4F0B-957B-3356350A3919} = {CF40312F-7EB7-4B17-AF56-0BE373352385}
 		{F84275D5-7DBE-44FD-B3A5-7AC6AA0F9A25} = {CF40312F-7EB7-4B17-AF56-0BE373352385}
+		{E3309747-5E23-4C15-B649-1EA8685E3C49} = {73B3F07D-A878-4017-B29D-2CD4A49867BF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B5EA6B20-3E9C-4651-9FEE-076C33715FD8}
