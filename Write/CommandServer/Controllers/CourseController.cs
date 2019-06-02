@@ -9,7 +9,7 @@
 
 	using OnlineCourse.Repository.Entity;
 
-	[Route("api/[controller]")]
+	//[Route("api/[controller]")]
 	[ApiController]
 	public class CourseController : ControllerBase
 	{
@@ -25,6 +25,7 @@
 
 		// GET api/values
 		[HttpGet]
+		[Route("api/course2")]
 		public IQueryable<Participant> Get()
 		{
 			return this.Repository.GetItems<Participant>();

@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>CoolBrains.Bus.ServiceBusHost</AssemblyName>
+    <RootNamespace>CoolBrains.Bus.ServiceBusHost</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\ServiceLocatorAdapter\MsDependency\MsDependency.csproj" />
+    <ProjectReference Include="..\Bus.Contracts\Bus.Contracts.csproj" />
+    <ProjectReference Include="..\ServiceBus\ServiceBus.csproj" />
+  </ItemGroup>
+
+</Project>

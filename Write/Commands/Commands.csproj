@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AssemblyName>Domain.Commands</AssemblyName>
+    <RootNamespace>Domain.Commands</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\InfrastructureBus\Bus.Contracts\Bus.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

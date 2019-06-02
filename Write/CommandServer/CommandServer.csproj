@@ -11,16 +11,22 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="3.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\InfrastructureBus\Bus.Contracts\Bus.Contracts.csproj" />
+    <ProjectReference Include="..\..\InfrastructureBus\ServiceBusHost.RabbitMq\ServiceBusHost.RabbitMq.csproj" />
+    <ProjectReference Include="..\..\InfrastructureBus\ServiceBusHost\ServiceBusHost.csproj" />
     <ProjectReference Include="..\..\Infrastructure\DataAccess\Repository.Contracts\Repository.Contracts.csproj" />
     <ProjectReference Include="..\..\Infrastructure\DataAccess\Repository\Repository.csproj" />
     <ProjectReference Include="..\..\Infrastructure\Logger\Logger.Contracts\Logger.Contracts.csproj" />
     <ProjectReference Include="..\..\Infrastructure\Logger\Logger.Serilog\Logger.Serilog.csproj" />
     <ProjectReference Include="..\..\Infrastructure\ServiceLocatorAdapter\MsDependency\MsDependency.csproj" />
     <ProjectReference Include="..\..\Infrastructure\WebApiBootstrapper\Bootstrapper\Bootstrapper.csproj" />
+    <ProjectReference Include="..\CommandHandlers\CommandHandlers.csproj" />
+    <ProjectReference Include="..\Commands\Commands.csproj" />
     <ProjectReference Include="..\OnlineCourse.Repository.Domain\OnlineCourse.Repository.Domain.csproj" />
     <ProjectReference Include="..\OnlineCourse.Repository.Entity\OnlineCourse.Repository.Entity.csproj" />
   </ItemGroup>

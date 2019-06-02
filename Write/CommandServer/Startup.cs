@@ -1,11 +1,28 @@
 ﻿namespace CommandServer
 {
+	using System;
+	using System.IO;
+	using System.Reflection;
+
+	using CoolBrains.Bus.Contracts;
+	using CoolBrains.Bus.ServiceBus.Bus;
+	using CoolBrains.Bus.ServiceBusHost.HostingServices;
+	using CoolBrains.ServiceBusHost.RabbitMq;
+	using CoolBrains.ServiceBusHost.RabbitMq.Extensions;
+
+	using Domain.CommandHandlers;
+
+	using GreenPipes;
+
 	using Infrastructure.Bootstrapper;
 	using Infrastructure.Logger.Contracts;
 	using Infrastructure.Logger.Serilog;
 	using Infrastructure.Repository;
 	using Infrastructure.Repository.Contracts;
 	using Infrastructure.SLAdapter.MsDependency;
+
+	using MassTransit;
+	using MassTransit.ExtensionsDependencyInjectionIntegration;
 
 	using Microsoft.AspNetCore.Builder;
 	using Microsoft.AspNetCore.Hosting;
@@ -49,23 +66,51 @@
 								description.GroupName.ToUpperInvariant());
 						}
 					});
+			
+			HostBus(app);
+		}
+
+		private static void HostBus(IApplicationBuilder app)
+		{
+			ServiceBusHostProvider.Get().Host(app.ApplicationServices).UseRabbitMq()
+				.ListenOn(
+					"Domain.Commands",
+					e =>
+						{
+							e.LoadFrom(app.ApplicationServices);
+							e.PrefetchCount = 2;
+							e.UseConcurrencyLimit(1);
+						})
+				.UseRetry(2, 2)
+				.Start();
 		}
 
 		public void ConfigureServices(IServiceCollection services)
 		{
+			
+			services.Configure<RabbitConfig>(this.Configuration.GetSection("RabbitConfig"))
+				.AddSingleton<IInmemoryBus, CoolInmemoryBus>()
+				.AddSingleton<IMassTransitBus, RabbitMqMassTransitBus>()
+				.AddSingleton<IExternalBus, CoolMassTransitBus>()
+				.AddSingleton<IExternalBusService, MassTransitRabbitMqHostingService>()
+				.AddSingleton<MassTransitRabbitMqHostingService>()
+				.AddSingleton<ICoolBus, CoolBus>();
+			
+
 			SeriLogConfiguration.Configure(this.Configuration.GetSection("logFilePath").Value);
 
 			RegisterDependencies(services);
 
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-			/*
-			Mapper.Initialize(cfg => {
-				cfg.CreateMap<CreateCourseCommand, Product>();
-				cfg.CreateMap<UpdateCourseCommand, Product>();
-			});
-			*/
+			 services.AddMassTransit(cfg =>
+			   {
+			   cfg.AddConsumer<AddCourseCommandHandler>();
+			   cfg.AddConsumer<SignupCourseCommandHandler>();
+			   
+			   });
 			AddVersioningAndDoc(services);
+			
 		}
 
 		private void AddVersioningAndDoc(IServiceCollection services)
@@ -119,5 +164,16 @@
 			var adapter = new MsServiceLocatorAdapter(services);
 			CommonServiceLocator.ServiceLocator.SetLocatorProvider(() => adapter);
 		}
+
+		public static IConfiguration BuildConfiguration()
+		{
+			var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+			return new ConfigurationBuilder()
+				.SetBasePath(path)
+				.AddJsonFile("appsettings.json")
+				.Build();
+		}
+
+		
 	}
 }
