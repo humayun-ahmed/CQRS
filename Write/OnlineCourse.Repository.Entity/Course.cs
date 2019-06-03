@@ -45,9 +45,22 @@
 			return bus.PublishUsingMedia(@event);
 		}
 
-		public bool Edit()
+		public Task Signup(ICoolBus bus, Participant participant )
 		{
-			throw new System.NotImplementedException();
+			if (this.Participants == null)
+			{
+				this.Participants=new List<Participant>();
+			}
+
+			this.Participants.Add(participant);
+			var @event = new CourseSignedupEvent
+				             {
+								 CourseGuid = this.CourseGuid,
+					             CourseId = this.CourseId,
+					             Name = participant.Name,
+					             Age = participant.Age,
+				             };
+			return bus.PublishUsingMedia(@event);
 		}
 
 		public bool Remove()

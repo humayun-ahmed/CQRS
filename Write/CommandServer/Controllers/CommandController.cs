@@ -36,8 +36,15 @@ namespace CommandServer.Controllers
 			return this.bus.SendUsingMedia(command);
 		}
 
+		[HttpPost]
+		[Route("api/Course/Signup")]
+		public Task Signup([FromBody] SignupCourseCommand command)
+		{
+			return this.bus.SendUsingMedia(command);
+		}
+
 		[HttpGet]
-		[Route("api/course3")]
+		[Route("api/course")]
 		public string Get()
 		{
 			return "test";

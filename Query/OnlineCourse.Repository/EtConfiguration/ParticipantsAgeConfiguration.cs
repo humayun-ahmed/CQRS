@@ -8,7 +8,7 @@ namespace OnlineCourse.Repository.EtConfiguration
 	{
 		public void Configure(EntityTypeBuilder<ParticipantsAge> builder)
 		{
-			builder.HasKey(p => p.ParticipantsAgeGuid);
+			builder.HasKey(p => p.CourseGuid);
 		}
 	}
 }

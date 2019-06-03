@@ -64,7 +64,8 @@ namespace ReadModel.EventSubscriber
 			{
 				
 				cfg.AddConsumer<CourseCreatedEventHandler>();
-				
+				cfg.AddConsumer<CourseSignedupEventHandler>();
+
 			});
 
 			return services.BuildServiceProvider();
