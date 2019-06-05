@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Infrastructure.Validator</AssemblyName>
-    <RootNamespace>Infrastructure.Validator.Utility</RootNamespace>
+    <RootNamespace>Infrastructure.Validator</RootNamespace>
     <Company>SELISE</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>2.0.0</Version>

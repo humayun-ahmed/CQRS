@@ -31,7 +31,16 @@ namespace ReadModel.EventSubscriber
 			course.Name = @event.Name;
 			course.Teacher = @event.Teacher;
 			this.repository.Add(course);
-			await this.repository.SaveChanges();
+			try
+			{
+				await this.repository.SaveChanges();
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine(e);
+				
+			}
+			
 			Console.WriteLine($"CourseCreatedEvent: User has created with Id {@event.CourseGuid}");
 		}
 	}

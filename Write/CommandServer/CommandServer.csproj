@@ -29,6 +29,7 @@
     <ProjectReference Include="..\Commands\Commands.csproj" />
     <ProjectReference Include="..\OnlineCourse.Repository.Domain\OnlineCourse.Repository.Domain.csproj" />
     <ProjectReference Include="..\OnlineCourse.Repository.Entity\OnlineCourse.Repository.Entity.csproj" />
+    <ProjectReference Include="..\Validators\Validators.csproj" />
   </ItemGroup>
 
 </Project>

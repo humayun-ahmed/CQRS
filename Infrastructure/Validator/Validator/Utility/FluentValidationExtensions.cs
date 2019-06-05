@@ -1,5 +1,5 @@
 ﻿
-namespace Infrastructure.Validator.Utility.Utility
+namespace Infrastructure.Validator.Utility
 {
 	using ValidationResult = Infrastructure.Validator.Contract.ValidationResult;
 

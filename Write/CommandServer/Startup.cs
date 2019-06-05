@@ -11,6 +11,7 @@
 	using CoolBrains.ServiceBusHost.RabbitMq.Extensions;
 
 	using Domain.CommandHandlers;
+	using Domain.Commands;
 
 	using GreenPipes;
 
@@ -36,6 +37,9 @@
 	using OnlineCourse.Repository.Entity;
 
 	using Swashbuckle.AspNetCore.Swagger;
+
+	using Validators;
+	using Infrastructure.Validator.Contract;
 
 	public class Startup
 	{
@@ -154,6 +158,7 @@
 		{
 			services.AddSingleton<ILog, LogUsingSerilog>();
 
+			services.AddScoped<IValidator<AddCourseCommand>, AddCourseCommandValidator>();
 			services.AddScoped<IRepository, Repository>();
 			services.AddScoped<IReadOnlyRepository, Repository>();
 			services.AddScoped<ICourse, Course>();

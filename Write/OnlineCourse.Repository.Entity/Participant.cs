@@ -2,7 +2,7 @@
 {
 	using System;
 
-	public class Participant: IAggregate
+	public class Participant
 	{
 		public long ParticipantId { get; set; }
 		public string Name { get; set; }

@@ -51,11 +51,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineCourse.Repository.Ent
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineCourse.Repository.Domain", "Write\OnlineCourse.Repository.Domain\OnlineCourse.Repository.Domain.csproj", "{2D9A5F25-04F5-471C-94D6-CFF21AD5677C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commands", "Write\Commands\Commands.csproj", "{25EA9C68-7F95-4372-9B6E-55AFD24A0992}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commands", "Write\Commands\Commands.csproj", "{25EA9C68-7F95-4372-9B6E-55AFD24A0992}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events", "Write\Events\Events.csproj", "{CCCB88D6-0970-449A-A21E-1B1890011843}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Events", "Write\Events\Events.csproj", "{CCCB88D6-0970-449A-A21E-1B1890011843}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandHandlers", "Write\CommandHandlers\CommandHandlers.csproj", "{84953473-B9D5-447B-96CA-4D258CFE3F37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandHandlers", "Write\CommandHandlers\CommandHandlers.csproj", "{84953473-B9D5-447B-96CA-4D258CFE3F37}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InfrastructureBus", "InfrastructureBus", "{CF40312F-7EB7-4B17-AF56-0BE373352385}"
 EndProject
@@ -67,7 +67,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceBusHost", "Infrastru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceBusHost.RabbitMq", "InfrastructureBus\ServiceBusHost.RabbitMq\ServiceBusHost.RabbitMq.csproj", "{F84275D5-7DBE-44FD-B3A5-7AC6AA0F9A25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadModel.EventSubscriber", "Query\ReadModel.EventSubscriber\ReadModel.EventSubscriber.csproj", "{E3309747-5E23-4C15-B649-1EA8685E3C49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReadModel.EventSubscriber", "Query\ReadModel.EventSubscriber\ReadModel.EventSubscriber.csproj", "{E3309747-5E23-4C15-B649-1EA8685E3C49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validators", "Write\Validators\Validators.csproj", "{63CE1891-F828-4F53-81E2-5261C7C75AE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -171,6 +173,10 @@ Global
 		{E3309747-5E23-4C15-B649-1EA8685E3C49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3309747-5E23-4C15-B649-1EA8685E3C49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3309747-5E23-4C15-B649-1EA8685E3C49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63CE1891-F828-4F53-81E2-5261C7C75AE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63CE1891-F828-4F53-81E2-5261C7C75AE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63CE1891-F828-4F53-81E2-5261C7C75AE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63CE1891-F828-4F53-81E2-5261C7C75AE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -205,6 +211,7 @@ Global
 		{11C402A8-EAEB-4F0B-957B-3356350A3919} = {CF40312F-7EB7-4B17-AF56-0BE373352385}
 		{F84275D5-7DBE-44FD-B3A5-7AC6AA0F9A25} = {CF40312F-7EB7-4B17-AF56-0BE373352385}
 		{E3309747-5E23-4C15-B649-1EA8685E3C49} = {73B3F07D-A878-4017-B29D-2CD4A49867BF}
+		{63CE1891-F828-4F53-81E2-5261C7C75AE5} = {097A0BFA-0CDF-4F9E-A7D8-719E0B0CC716}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B5EA6B20-3E9C-4651-9FEE-076C33715FD8}

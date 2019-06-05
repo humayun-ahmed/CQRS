@@ -7,12 +7,19 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CommandServer.Controllers
 {
+	using System.Net;
+	using System.Net.Http;
+
 	using CoolBrains.Bus.Contracts;
 	using CoolBrains.Bus.Contracts.Command;
 
 	using Domain.Commands;
 
 	using Infrastructure.Logger.Contracts;
+	using Infrastructure.Validator.Contract;
+
+	using Microsoft.AspNetCore.Server.Kestrel.Core;
+	using Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http;
 
 	//[Route("api/[controller]")]
     [ApiController]
@@ -20,20 +27,31 @@ namespace CommandServer.Controllers
 	{
 		private readonly ICoolBus bus;
 
+		private readonly IValidator<AddCourseCommand> addCourseCommandValidator;
+
 		public ILog Log { get; set; }
 
-		public CommandController(ICoolBus bus, ILog log)
+		public CommandController(ICoolBus bus, ILog log, IValidator<AddCourseCommand> addCourseCommandValidator)
 		{
 			this.bus = bus;
-
 			this.Log = log;
+			this.addCourseCommandValidator = addCourseCommandValidator;
 		}
 
 		[HttpPost]
 		[Route("api/Course/Create")]
-		public Task Create([FromBody] AddCourseCommand command)
+		public IActionResult Create([FromBody] AddCourseCommand command)
 		{
-			return this.bus.SendUsingMedia(command);
+			var validationResult= this.addCourseCommandValidator.PerformValidation(command);
+			if (validationResult.IsValid)
+			{
+				this.bus.SendUsingMedia(command);
+				return this.Ok();
+			}
+			else
+			{
+				return this.BadRequest(validationResult);
+			}
 		}
 
 		[HttpPost]

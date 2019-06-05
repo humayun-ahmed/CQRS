@@ -4,7 +4,7 @@
 
 	using FluentValidation.Results;
 
-	using Infrastructure.Validator.Utility.Utility;
+	using Infrastructure.Validator.Utility;
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
 
