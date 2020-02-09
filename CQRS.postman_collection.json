@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "http://localhost:5000/api/course",
+			"name": "http://localhost:5001/api/course",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -18,12 +18,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/course",
+					"raw": "http://localhost:5001/api/course",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "5000",
+					"port": "5001",
 					"path": [
 						"api",
 						"course"

@@ -12,7 +12,7 @@ namespace QueryServer.Controllers
 
 	using OnlineCourse.Repository.Models;
 
-	[Route("api/[controller]")]
+	//[Route("api/[controller]")]
     [ApiController]
     public class CourseController : ControllerBase
     {
@@ -26,9 +26,17 @@ namespace QueryServer.Controllers
 	    }
 		// GET api/values
 		[HttpGet]
-	    public IQueryable<ParticipantsAge> Get()
+		[Route("api/course")]
+		public IQueryable<ParticipantsAge> Get()
 	    {
 		    return  this.Repository.GetItems<ParticipantsAge>();
 	    }
+
+		[HttpGet]
+		[Route("api/courses")]
+		public IQueryable<Course> GetCourses()
+		{
+			return this.Repository.GetItems<Course>();
+		}
 	}
 }
